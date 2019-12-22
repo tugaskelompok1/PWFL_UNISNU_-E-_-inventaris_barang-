@@ -21,6 +21,7 @@
       <div class="row mt-3">
         <div class="col-md-6">
           <a href="<?= base_url(); ?>admin/tambah" class="btn btn-primary">Tambah Mahasiswa</a>
+          <a href="<?= base_url(); ?>laporanpdf/index" class="btn btn-success">Cetak Pdf</a>
         </div>
       </div>
     </div>

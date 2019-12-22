@@ -14,6 +14,8 @@ class Admin extends CI_Controller
     public function index()
     {
         $data['judul'] = 'Data Barang';
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata['email']])->row_array();
         $data['barang'] = $this->Admin_model->getAllBarang();
         // if ($this->input->post('keyword')) {
         //     $data['mahasiswa'] = $this->Mahasiswa_model->cariDataMahasiswa();
@@ -80,5 +82,16 @@ class Admin extends CI_Controller
         $this->Admin_model->hapusDataBarang($id);
         $this->session->set_flashdata('flash', 'dihapus');
         redirect('admin');
+    }
+    public function charts()
+    {
+        $data['judul'] = 'Data Barang';
+        $data['barang'] = $this->Admin_model->get_chart();
+        // if ($this->input->post('keyword')) {
+        //     $data['mahasiswa'] = $this->Mahasiswa_model->cariDataMahasiswa();
+        // }
+        $this->load->view('templets/header', $data);
+        $this->load->view('Admin/charts', $data);
+        $this->load->view('templets/footer', $data);
     }
 }

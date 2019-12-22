@@ -64,4 +64,15 @@ class Admin_model extends CI_Model
 
         return $this->db->get('mahasiswa')->result_array();
     }
+    function get_chart()
+    {
+        $query = $this->db->query("SELECT tahun,SUM(harga) AS harga FROM tabel_barang GROUP BY tahun");
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $data) {
+                $hasil[] = $data;
+            }
+            return $hasil;
+        }
+    }
 }

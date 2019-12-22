@@ -46,7 +46,7 @@ defined('BASEPATH') or exit('No direct access allowed'); ?>
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?= base_url(); ?>admin/index">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -67,8 +67,8 @@ defined('BASEPATH') or exit('No direct access allowed'); ?>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <h6 class="collapse-header">Components:</h6>
+            <a class="collapse-item" href="<?= base_url(); ?>admin/charts">Charts Pembelian</a>
             <a class="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>
